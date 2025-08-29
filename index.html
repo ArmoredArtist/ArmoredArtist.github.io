@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grundlestone — A Text‑Based MUD</title>
-  <meta name="description" content="Grundlestone — a classic text‑based MUD. Adventure awakens soon." />
-  <meta property="og:title" content="Grundlestone — A Text‑Based MUD" />
+  <title>Grundlestone — A Text-Based MUD</title>
+  <meta name="description" content="Grundlestone — a classic text-based MUD. Adventure awakens soon." />
+  <meta property="og:title" content="Grundlestone — A Text-Based MUD" />
   <meta property="og:description" content="Adventure awakens soon." />
   <meta property="og:image" content="GS.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +37,8 @@
       background: radial-gradient(150% 120% at -10% -20%, rgba(255,255,255,.35) 0%, transparent 50%) padding-box,
                   conic-gradient(from 20deg, var(--gold-4), var(--gold-2), var(--gold-0), var(--gold-2), var(--gold-4)) border-box;
       box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 0 0 3px rgba(0,0,0,.45) inset,
-                  0 18px 40px rgba(0,0,0,.65), 0 6px 18px rgba(0,0,0,.45); isolation:isolate; }
+                  0 18px 40px rgba(0,0,0,.65), 0 6px 18px rgba(0,0,0,.45); isolation:isolate;
+      margin:0; /* FIX: reset UA figure margins so the frame can fill width */ }
     .frame::before{ content:""; position:absolute; inset:10px; border-radius:16px; pointer-events:none;
       background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.25) 0 6deg, rgba(0,0,0,.15) 6deg 12deg);
       mix-blend-mode:soft-light; opacity:.6; }
@@ -65,10 +66,23 @@
       font-size:clamp(20px, 5vw, 40px); color:#e5dac3; opacity:.9; text-shadow:0 1px 0 rgba(0,0,0,.7), 0 10px 30px rgba(0,0,0,.6); }
     /* -------------------- MOBILE ONLY (CSS only; preserves exact quote content/order) -------------------- */
     @media (max-width: 640px){
-      .hero{ padding:18px 12px 6px; }
-      .frame{ padding:12px; border-radius:16px; }
+      /* FIX: allow framed image to fill the viewport width on mobile */
+      main{ width:100vw; }
+      .hero{ padding:0 12px 6px; }     /* small side gutter; set to 0 0 6px for edge-to-edge */
+      .frame{
+        display:block;                 /* not inline-block so width:100% applies */
+        width:100%;
+        padding:12px;                  /* keep the frame look */
+        border-radius:16px;
+        margin:0;
+      }
       .frame::before{ inset:8px; border-radius:12px; }
-      .art{ width:100%; max-width:100%; height:auto; border-radius:12px; }
+      .art{
+        width:100%;
+        max-width:none;                /* remove desktop cap */
+        height:auto;
+        border-radius:12px;
+      }
       .hero-divider{ height:24px; }
       .quotes-section{ padding:18px 12px 8px; }
       .quotes{ gap:12px; grid-template-columns:1fr; }
