@@ -27,7 +27,7 @@
       background-size:300px 300px; }
     main{ width:min(96vw, 1120px); margin:0 auto; }
     /* -------------------- HERO -------------------- */
-    .hero{ position:relative; display:grid; place-items:center; padding:6vmin 4vmin 2vmin; }
+    .hero{ position:relative; display:grid; place-items:center; padding:6vmin 4vmin 0; }
     .hero::before{ content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
       background:
         radial-gradient(1200px 800px at 50% 10%, rgba(40,46,60,.55), rgba(40,46,60,0) 60%),
@@ -44,7 +44,7 @@
       mix-blend-mode:soft-light; opacity:.6; }
     .art{ display:block; width:min(88vw, 950px); height:auto; border-radius:14px; background:#000;
       box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 20px 50px rgba(0,0,0,.65); }
-    .hero-divider{ height:42px; margin-top:10px; position:relative; }
+    .hero-divider{ height:20px; margin-top:6px; position:relative; }
     .hero-divider::before{ content:""; position:absolute; inset:0 -10vw; background:
       radial-gradient(1200px 120px at 50% 0, rgba(255,255,255,.06), rgba(255,255,255,0) 70%);
       opacity:.35; filter:blur(2px); }
@@ -58,7 +58,7 @@
     .quote--center{ grid-column:1/-1; max-width:780px; justify-self:center; }
     .quote p{ margin:0; font-size:1rem; line-height:1.6; }
     .who{ margin-top:8px; font-size:.9rem; color:#e8d9b8; letter-spacing:.02em; }
-    .cta{ max-width:980px; margin:18px auto 0; font-family:Cinzel,serif; letter-spacing:.04em;
+    .cta{ max-width:980px; margin:10px auto 0; font-family:Cinzel,serif; letter-spacing:.04em;
       font-size:clamp(18px,2.2vw,24px); color:#fff3d1; background:linear-gradient(90deg, rgba(212,175,55,.18), rgba(255,244,192,.08));
       border:1px solid rgba(212,175,55,.35); border-radius:16px; padding:16px 20px;
       box-shadow:0 6px 14px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08); }
@@ -68,7 +68,7 @@
     @media (max-width: 640px){
       /* FIX: allow framed image to fill the viewport width on mobile */
       main{ width:100vw; }
-      .hero{ padding:0 12px 6px; }     /* small side gutter; set to 0 0 6px for edge-to-edge */
+      .hero{ padding:0 12px; }         /* small side gutter; set to 0 for edge-to-edge */
       .frame{
         display:block;                 /* not inline-block so width:100% applies */
         width:100%;
@@ -83,11 +83,11 @@
         height:auto;
         border-radius:12px;
       }
-      .hero-divider{ height:24px; }
+      .hero-divider{ height:14px; }
       .quotes-section{ padding:18px 12px 8px; }
       .quotes{ gap:12px; grid-template-columns:1fr; }
       .quote{ padding:14px 14px; border-radius:14px; }
-      .cta{ width:calc(100% - 24px); margin:16px auto 0; font-size:18px; padding:14px 16px; }
+      .cta{ width:calc(100% - 24px); margin:10px auto 0; font-size:18px; padding:14px 16px; }
       .caption{ margin:22px auto 12vh; font-size:clamp(18px, 6vw, 28px); letter-spacing:.14em; }
       body::after{ opacity:.06; }
     }
@@ -106,15 +106,15 @@
     <div class="caption" aria-live="polite">Coming soon</div>
     <section class="quotes-section" aria-label="Whispers from beneath the Grundlestone">
       <div class="quotes">
-        <!-- Lyra, Lyra -->
+        <!-- Lyra, Elowen -->
         <blockquote class="quote"><p>"The air itself hums with magic under the Grundlestone. It's both terrifying and intoxicating."</p><div class="who">— Lyra, a magical researcher</div></blockquote>
-        <blockquote class="quote"><p>"The Grundlestone doesn't just hold magic, it breathes it. It's exhilarating and frankly unnerving."</p><div class="who">— Lyra, a magical researcher</div></blockquote>
-        <!-- Rian, Rian -->
+        <blockquote class="quote"><p>"The Grundlestone doesn't just hold magic, it breathes it. It's exhilarating and frankly unnerving."</p><div class="who">— Elowen, a magical researcher</div></blockquote>
+        <!-- Rian, Bram -->
         <blockquote class="quote"><p>"Mapping the Grundlestone is an impossible task. Every chamber shifts, every echo carries a new whisper. It's a living, breathing labyrinth."</p><div class="who">— Rian, a cartographer</div></blockquote>
-        <blockquote class="quote"><p>"The Grundlestone is a living thing. You can feel it breathing in the silence between the echoes."</p><div class="who">— Rian, a cartographer</div></blockquote>
-        <!-- Solius, Solius -->
+        <blockquote class="quote"><p>"The Grundlestone is a living thing. You can feel it breathing in the silence between the echoes."</p><div class="who">— Bram, a cartographer</div></blockquote>
+        <!-- Solius, Varric -->
         <blockquote class="quote"><p>"Yes, you will find treasures under the Grundlestone but you leave pieces of yourself behind. It claims you, bit by bit."</p><div class="who">— Solius, From the First Expedition</div></blockquote>
-        <blockquote class="quote"><p>"You don't just explore the Grundlestone; you become part of it, for better or worse."</p><div class="who">— Solius, From the First Expedition</div></blockquote>
+        <blockquote class="quote"><p>"You don't just explore the Grundlestone; you become part of it, for better or worse."</p><div class="who">— Varric, from the First Expedition</div></blockquote>
         <!-- Harlan centered last -->
         <blockquote class="quote quote--center"><p>"I've seen wonders under the Grundlestone that would make a king weep with envy."</p><div class="who">— Harlan, a retired knight</div></blockquote>
       </div>
