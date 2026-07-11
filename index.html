@@ -69,14 +69,14 @@
       font-weight:600; letter-spacing:.15em; text-transform:uppercase; font-size:clamp(26px, 5vw, 42px);
       color:#e5dac3; opacity:.9; text-shadow:0 1px 0 rgba(0,0,0,.7), 0 10px 30px rgba(0,0,0,.6); }
     .caption::after{ content:"Coming soon"; position:absolute; inset:0; pointer-events:none; color:transparent;
-      background:linear-gradient(100deg, transparent 40%, rgba(212,175,55,.08) 44%, rgba(255,231,155,.68) 50%, rgba(212,175,55,.2) 56%, transparent 60%);
-      background-size:250% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text;
-      filter:drop-shadow(0 0 4px rgba(212,175,55,.16)); opacity:0; animation:caption-glimmer 6.5s ease-in-out infinite; }
+      background:linear-gradient(100deg, transparent 35%, rgba(212,175,55,.18) 41%, rgba(243,215,122,.65) 46%, rgba(255,244,192,1) 50%, rgba(243,215,122,.72) 54%, rgba(212,175,55,.22) 59%, transparent 65%);
+      background-size:210% 100%; background-position:100% 0; -webkit-background-clip:text; background-clip:text;
+      filter:drop-shadow(0 0 6px rgba(212,175,55,.38)); opacity:0; animation:caption-glimmer 6.5s ease-in-out infinite; }
     @keyframes caption-glimmer{
       0%,18%{ background-position:100% 0; opacity:0; }
-      22%{ opacity:.75; }
-      52%{ background-position:0 0; opacity:.75; }
-      58%,100%{ background-position:0 0; opacity:0; }
+      21%{ opacity:1; }
+      52%{ background-position:0 0; opacity:1; }
+      57%,100%{ background-position:0 0; opacity:0; }
     }
     /* -------------------- MOBILE ONLY (CSS only; preserves exact quote content/order) -------------------- */
     @media (max-width: 640px){
